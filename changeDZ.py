@@ -6,17 +6,12 @@ def change(text):
     for line in lines:
         if line.split(' ')[1] == text or line.split(' ')[0] == text:
             newline = changeMenu(line)
-            print(newline, " newline")
-            print(lines, ' lines')
-            print(lines.index(line), 'индекс')
             index = lines.index(line)
             lines[index] = newline
             found = True 
     if found == True:
         data = open('data.txt', 'w+', encoding='utf-8')
         data.writelines(lines)
-        # for line in lines:
-        #     data.write(line)
         print("Изменено")
     else:
         print("Не найдено")
